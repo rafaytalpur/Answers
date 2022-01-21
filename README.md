@@ -4,8 +4,6 @@
 
 DatabaseSample.db is a sample database with values already inserted as an example. 
 
-Following the steps below will create a new empty database the first time the program is run.
-
 ###### NOTE: 
 While you can use your browser to test GET requests, you will need a different tool to test other requests. I recommend using Postman for testing all POST, PUT and DELETE requests. 
       
