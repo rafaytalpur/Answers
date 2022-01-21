@@ -1,5 +1,6 @@
 # GDSC Uniserver Designer Technical Assessment
 
+*FILES ARE LOCATED IN THE MASTER BRANCH.*
 
 DatabaseSample.db is a sample database with values already inserted as an example. 
 
