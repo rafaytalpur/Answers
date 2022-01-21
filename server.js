@@ -13,7 +13,8 @@ app.listen(HTTP_PORT, () => {
     console.log("Server running on port %PORT%".replace("%PORT%",HTTP_PORT))
 });
 
-//-------------------------------------------------------------------------------------------------
+
+// GET EMPLOYEE
 app.get("/api/get_employee/:id", (req, res, next) => {
     
     var sql = "SELECT Employee.name as name, Department.name as department, Salary FROM Employee INNER JOIN Department ON Employee.department_id = Department.department_id INNER JOIN Salary ON Employee.employee_id = Salary.employee_id WHERE Employee.employee_id = ?"
@@ -31,7 +32,9 @@ app.get("/api/get_employee/:id", (req, res, next) => {
         })
     });
 });
-//-------------------------------------------------------------------------------------------------
+
+
+// ADD EMPLOYEE
 app.post("/api/add_employee/", (req, res, next) => {
     var errors=[]
     if (!req.body.name){
@@ -89,7 +92,9 @@ app.post("/api/add_employee/", (req, res, next) => {
         });
     })
 });
-//-------------------------------------------------------------------------------------------------
+
+
+// ADD DEPARTMENT
 app.post("/api/add_department/", (req, res, next) => {
     var errors=[]
     if (!req.body.name){
@@ -116,7 +121,9 @@ app.post("/api/add_department/", (req, res, next) => {
         })
     });
 })
-//-------------------------------------------------------------------------------------------------
+
+
+//UPDATE SALARY
 app.put("/api/update_salary/:id", (req, res, next) => {
     var data = {
         salary: req.body.salary
@@ -146,7 +153,9 @@ app.put("/api/update_salary/:id", (req, res, next) => {
             });
     });
 })
-//-------------------------------------------------------------------------------------------------
+
+
+//TERMINATE EMPLOYEE
 app.delete("/api/terminate_employee/:id", (req, res, next) => {
     db.run(
         'DELETE FROM Employee WHERE employee_id = ?',
@@ -160,3 +169,8 @@ app.delete("/api/terminate_employee/:id", (req, res, next) => {
         
     });
 })
+
+
+app.get("/", (req, res, next) => {
+    res.json({"message":"Running successfully"})
+});

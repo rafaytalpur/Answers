@@ -11,24 +11,24 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
     
     console.log('Connected to the database.')
     db.run('PRAGMA foreign_keys = ON;')
-    /* db.run(`CREATE TABLE Employee (
+    db.run(`CREATE TABLE IF NOT EXISTS Employee (
       employee_id INTEGER PRIMARY KEY AUTOINCREMENT, 
       name TEXT, 
       department_id INTEGER, 
       FOREIGN KEY (department_id) REFERENCES Department(department_id)
       )`),
 
-    db.run(`CREATE TABLE Department (
+    db.run(`CREATE TABLE IF NOT EXISTS Department (
       department_id INTEGER PRIMARY KEY AUTOINCREMENT, 
       name TEXT NOT NULL
       )`),
 
-    db.run(`CREATE TABLE Salary (
+    db.run(`CREATE TABLE IF NOT EXISTS Salary (
       employee_id INTEGER, 
       salary INTEGER, 
       FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
       ON DELETE CASCADE)
-      `) */;
+      `);
 
   })
 
