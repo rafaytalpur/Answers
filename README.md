@@ -1,27 +1,32 @@
-#GDSC Uniserver Designer Technical Assessment
+# GDSC Uniserver Designer Technical Assessment
 
 
 DatabaseSample.db is a sample database with values already inserted as an example. 
-Following the steps below will create a new empty database.
 
-NOTE: While you can use your browser to test GET requests, you will need a different tool to test other requests. 
-      I recommend using Postman for testing all POST, PUT and DELETE requests. 
+Following the steps below will create a new empty database the first time the program is run.
+
+###### NOTE: 
+While you can use your browser to test GET requests, you will need a different tool to test other requests. I recommend using Postman for testing all POST, PUT and DELETE requests. 
       
       
 -----------------------------------------------------------------------------------------------------------------------------------
-{Request Endpoint --> Function | Type of Request}
+## {Request Endpoint --> Function | Type of Request}
 
 get_employee --> gets a specific employee's information given the employee id | GET
+
 add_employee --> adds an employee to the database with the given name, department id and salary | POST
+
 add_department --> adds a department to the database with the given name | POST
+
 update_salary --> updates the salary of an employee given the employee id and new salary | PUT
+
 terminate_employee --> removes an employee's information from the database given the employee id | DELETE
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
 
 
-#STEPS TO RUN APPLICATION: 
+### STEPS TO RUN: 
 
 1. In a terminal, type "cd UniserverTechnicalAssessment" to open the directory.
 2. Type "npm run start" --> This will create the server and run it on port 8000. This also creates the empty SQLite database that will be used.
